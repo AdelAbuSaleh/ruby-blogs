@@ -1,0 +1,32 @@
+/* direction */
+.rtl{
+  direction: rtl;
+}
+
+.ltr{
+  direction: ltr;
+}
+/******/
+
+/* font */
+body,h1,h2,h3,h4,h5,h6 { font-family: "Raleway", Arial, Helvetica, sans-serif }
+/******/
+
+/*** custom-light-grey */
+.custom-light-grey{ color:#000!important;background-color:#f1f1f1!important }
+/****/
+
+
+.image-container{
+  background-image: url(../images/slidshow.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 50vh;
+}
+
+.image-content {
+  height: 1000%;
+  width: 1000%;
+  background-color: #ffffff45;
+}
