@@ -9,10 +9,10 @@
       </ul>
     </div>
 
-    <%= link_to ' Home', '#', class: "nav-link", style: "font-size:20px;color:white"%>&nbsp;&nbsp;&nbsp;
-    <%= link_to ' Blog', '#', class: "", style: "font-size:20px;color:white"%>&nbsp;&nbsp;&nbsp;
-    <%= link_to ' About', '#', class: "", style: "font-size:20px;color:white"%>&nbsp;&nbsp;&nbsp;
-    <%= link_to ' Contact', '#', class: "", style: "font-size:20px;color:white"%>&nbsp;&nbsp;&nbsp;
+    <%= link_to ' Home', root_url, method: :get, class: "nav-link", style: "font-size:20px;color:white"%>&nbsp;&nbsp;&nbsp;
+    <%= link_to ' Blog', root_path, method: :get, class: "nav-link", style: "font-size:20px;color:white"%>&nbsp;&nbsp;&nbsp;
+    <%= link_to ' About', about_path, method: :get, class: "nav-link", style: "font-size:20px;color:white"%>&nbsp;&nbsp;&nbsp;
+    <%= link_to ' Contact', contact_url, method: :post, class: "nav-link", style: "font-size:20px;color:white"%>&nbsp;&nbsp;&nbsp;
       <div class="dropdown show">
       <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Comming Soon

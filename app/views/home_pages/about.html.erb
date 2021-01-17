@@ -1,15 +1,49 @@
-<!-- Start Home Page -->
-<!-- Start image container -->
-<div class="image-container">
-  <div image-content>
-    <h1> Hello Word </h1>
-  </div>
-</div>
-<!-- End image container -->
-
-<!-- Start content after image -->
-<div>
-    <h1> Hello Word </h1>
-</div>
-<!-- End content after image -->
-<!-- End Home Page -->
+<!-- ======= About Section ======= -->
+  <section id="about" class="about">
+    <div class="container">
+      <div class="section-title">
+        <h2>About me</h2>
+        <p> 
+          I am a web application developer, I love programming and design,
+          and I currently work for a software company. I spend most of my time in the codeing, 
+          and research in developing myself in this specialization ,
+          and I strive to be Full stack developer .. I will work hard for it.
+        </p>
+      </div>
+      <div class="row">
+        <div class="col-lg-4" data-aos="fade-right">
+          <%= image_pack_tag("media/images/profile-imge.jpg", class: "img-fluid", alt: "") %>
+        </div>
+        <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
+          <div class="row">
+            <div class="col-lg-6">
+              <ul>
+                <li><i class="fa fa-angle-double-right"></i> <strong>Birthday:</strong> 16 Jan 1996</li>
+                <li><i class="fa fa-angle-double-right"></i> <strong>Website:</strong>
+                  <a href="https://adelsaleh.netlify.app/" class="" target='_blank'>adelsaleh</a>
+               </li>
+                <li><i class="fa fa-angle-double-right"></i> <strong>Phone:</strong> +967 736 1150 19</li>
+                <li><i class="fa fa-angle-double-right"></i> <strong>City:</strong> Mukalla, Hadrmoat</li>
+              </ul>
+            </div>
+            <div class="col-lg-6">
+              <ul>
+                <li><i class="fa fa-angle-double-right"></i> <strong>Age:</strong> 
+                  <script>
+                    var currentDate  = new Date();
+                    document.write(currentDate.getFullYear() - 1996);
+                  </script>
+                </li>
+                <li><i class="fa fa-angle-double-right"></i> <strong>Degree:</strong> Bachelor's</li>
+                <li><i class="fa fa-angle-double-right"></i> <strong>Personal email:</strong> adelsaleh46@gmail.com</li>
+                <li><i class="fa fa-angle-double-right"></i> <strong>Freelance:</strong> Available</li>
+              </ul>
+            </div>
+          </div>
+          <p>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+<!-- End About Section -->

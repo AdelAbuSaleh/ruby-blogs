@@ -1,0 +1,75 @@
+<!-- ======= Contact Section ======= -->
+<section id="contact" class="contact">
+  <div class="container">
+    <div class="section-title">
+      <h2>Contact</h2>
+      <p>
+        I`am so Happy to contact me and recived any siggests .</p>
+    </div>
+    <div class="row" data-aos="fade-in">
+      <div class="col-lg-5 d-flex align-items-stretch">
+        <div class="info">
+          <div class="address">
+            <i class="icofont-google-map"></i>
+            <h4>Location:</h4>
+            <p>Hadramout, AlMukalla, AlDise, 22 May street</p>
+          </div>
+
+          <div class="email">
+            <i class="icofont-envelope"></i>
+            <h4>Email:</h4>
+            <p>adelsaleh46@gmail.com</p>
+          </div>
+
+          <div class="phone">
+            <i class="icofont-phone"></i>
+            <h4>Call:</h4>
+            <p>
+              +967 736 115 019 </br>
+              +967 770 382 501 </br>
+             </p>
+          </div>
+          <iframe src="https://www.google.com/maps/place/Al+Mukalla,+Yemen/@14.5451993,49.0853643,13z/data=!3m1!4b1!4m5!3m4!1s0x3de8e425d842c827:0x4c17c5473e84c6c3!8m2!3d14.5404328!4d49.127197?hl=en-US" frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
+        </div>
+      </div>
+
+      <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
+      <!-- Start form row -->
+        <%= form_with(url: contact_path) do |form| %>
+          <div class="form-row rtl">
+          <!-- Start Fields -->
+            <!-- Name -->
+            <div class="col-md-10 mb-10 rtl">
+              <%=
+                form.text_field :name, class: "form-control is-valid",
+                required: true, placeholder: " الاســــــم " 
+              %>
+            </div></br></br></br>
+            <!-- Email -->
+            <div class="col-md-10 mb-10 rtl">
+              <%=
+                form.text_field :email, class: "form-control is-valid",
+                required: true, placeholder: " الأيــمـيل" 
+              %>
+            </div></br></br></br>
+            <!-- Message -->
+            <div class="col-md-10 mb-10 rtl">
+              <%=
+                form.text_area :message, class: "form-control is-valid",
+                required: true, placeholder: " الرســالة" 
+              %>
+            </div></br></br></br>
+
+            <div class="col-md-6">
+              <%= form.submit 'Send Message', class: 'btn btn-sm btn-rounded' %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+
+      <div class="col-md-6" id="flash-message">
+        <%# <%= render 'flash' %>
+      </div>
+  </div>
+</section>
+<!-- End Contact Section -->
