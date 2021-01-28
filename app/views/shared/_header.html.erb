@@ -14,17 +14,49 @@
     <%= link_to ' About', about_path, method: :get, class: "nav-link", style: "font-size:20px;color:white"%>&nbsp;&nbsp;&nbsp;
     <%= link_to ' Contact', contact_url, method: :post, class: "nav-link", style: "font-size:20px;color:white"%>&nbsp;&nbsp;&nbsp;
       <div class="dropdown show">
-      <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Comming Soon
-      </a>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-        <a
-          <%= link_to ' LogIn', '#', class: " dropdown-item fa fa-sign-in sigin-icon", 
-            style: "font-size:20px;color:red"%>
+        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Admin
         </a>
-        <a class="dropdown-item" href="#">Another action</a>
-        <a class="dropdown-item" href="#">Something else here</a>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+          <% unless logged_in? %>
+            <a
+              <%= link_to ' AdminLogIn', adminlogin_url, method: :get, class: " dropdown-item fa fa-sign-in sigin-icon",
+                style: "font-size:20px;color:red"%>
+            </a>
+          <% else %>
+            <a
+              <%= link_to ' LogOut', logout_path, method: "delete", class: " dropdown-itemfa fa-sign-out sigout-icon",
+                style: "font-size:20px;color:red"%>
+            </a>
+          <% end %>
+          <!--<a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a> -->
+        </div>
       </div>
-    </div>
+      &nbsp;&nbsp;&nbsp;
+      <% if logged_in? %>
+        <div class="dropdown show">
+          <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Managment
+          </a>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <a
+              <%= link_to ' create posts', adminlogin_url, method: :get, class: " dropdown-item fa fa-sign-in sigin-icon",
+                style: "font-size:20px;color:red"%>
+            </a>
+            <!--<a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a> -->
+          </div>
+
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <a
+              <%= link_to ' AdminLogIn', adminlogin_url, method: :get, class: " dropdown-item fa fa-sign-in sigin-icon",
+                style: "font-size:20px;color:red"%>
+            </a>
+            <!--<a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a> -->
+          </div>
+        </div>
+      <% end %>
   </div>
 </nav>

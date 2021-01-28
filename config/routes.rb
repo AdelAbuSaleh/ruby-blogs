@@ -1,5 +1,14 @@
 Rails.application.routes.draw do
+  namespace :admin do
+    resources :users
+  end
   root to: 'home_pages#home'
+
+  get 'signup' => 'admin/users#new'
+  post 'signup' => 'admin/users#create'
+  get 'adminlogin' => 'admin/sessions#new'
+  post 'adminlogin' => 'admin/sessions#create'
+  delete 'logout' => 'admin/sessions#destroy'
 
   # get 'about' => 'home_pages#about'
   # get '/contact' => 'home_pages#contact'

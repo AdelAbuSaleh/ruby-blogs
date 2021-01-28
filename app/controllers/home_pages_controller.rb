@@ -1,4 +1,6 @@
 class HomePagesController < ApplicationController
+  skip_before_action :validate_token!
+
   # GET /home_pages/home
   def home; end
 

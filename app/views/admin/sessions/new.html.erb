@@ -1,0 +1,36 @@
+<!-- -->
+<!-- -->
+<div class="" style="text-align: center;">
+  <p class="h4 text-center py-4">Admin LogIn</p>
+  <!-- Start fields_for login -->
+  <%= form_with(url: adminlogin_url) do |form| %>
+    <!-- Start fields -->
+    <!-- UserName OR Email -->
+    <div class="col-md-4 mb-3 mx-auto rtl">
+      <%=
+        form.text_field :login, class: "form-control is-valid", required: true, placeholder: "اسم المستخدم او البريد الالكتروني"
+      %>
+    </div>
+
+    <!-- Password -->
+    <div class="col-md-4 mb-3 mx-auto rtl">
+      <%=
+        form.password_field :password, class: "form-control is-valid", required: true, placeholder: "كلمة المرور"
+      %>
+    </div>
+    <!-- End fields -->
+
+    <!-- submit -->
+      &nbsp;&nbsp;&nbsp;
+    <div class="mt-7 ml-4 center">
+      <p> Sing in to site to have wonderful features. </p>
+    </div>
+      &nbsp;&nbsp;&nbsp;
+    <div class="form-group w3-red fa fa-sign-in">
+      <%= form.submit "تسجيل الدخول", class:"btn btn my-2 my-sm-0" %>
+    </div>
+    <!-- End submit -->
+  <% end %>
+  <!-- End fields_for login -->
+</div>
+<%# <%= link_to 'Back', v1_users_path %>
