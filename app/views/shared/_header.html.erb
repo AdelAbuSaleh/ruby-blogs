@@ -10,7 +10,7 @@
     </div>
 
     <%= link_to ' Home', root_url, method: :get, class: "nav-link", style: "font-size:20px;color:white"%>&nbsp;&nbsp;&nbsp;
-    <%= link_to ' Blog', root_path, method: :get, class: "nav-link", style: "font-size:20px;color:white"%>&nbsp;&nbsp;&nbsp;
+    <%= link_to ' Blogs', posts_path, method: :get, class: "nav-link", style: "font-size:20px;color:white"%>&nbsp;&nbsp;&nbsp;
     <%= link_to ' About', about_path, method: :get, class: "nav-link", style: "font-size:20px;color:white"%>&nbsp;&nbsp;&nbsp;
     <%= link_to ' Contact', contact_url, method: :post, class: "nav-link", style: "font-size:20px;color:white"%>&nbsp;&nbsp;&nbsp;
       <div class="dropdown show">
@@ -41,7 +41,7 @@
           </a>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
             <a
-              <%= link_to ' create posts', adminlogin_url, method: :get, class: " dropdown-item fa fa-sign-in sigin-icon",
+              <%= link_to ' create posts', new_post_url, method: :get, class: " dropdown-item fa fa-sign-in sigin-icon",
                 style: "font-size:20px;color:red"%>
             </a>
             <!--<a class="dropdown-item" href="#">Another action</a>

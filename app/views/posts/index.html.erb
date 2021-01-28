@@ -14,14 +14,15 @@
     <% @posts.each do |post| %>
       <tr>
         <td><%= post.title %></td>
-        <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= post.body %></td>
+        <td><%= link_to 'Show', post, method: :get %></td>
+        <% if logged_in? %>
+          <td><%= link_to 'Edit', edit_post_path(post), method: :get %></td>
+          <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Post', new_post_path %>
