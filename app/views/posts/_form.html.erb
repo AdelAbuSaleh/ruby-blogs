@@ -22,6 +22,14 @@
     <%= form.rich_text_area :body %>
   </div>
 
+  <!-- category -->
+  <div class="col-md-3 mb-2">
+    <%=
+     form.select :category_id,
+      options_for_select(Category.all.map{|c| [c.name_ar, c.id]},
+       form.object.category_id), {}, { class: "form-control selectpicker" }
+    %>
+  </div> 
   <div class="actions">
     <%= form.submit %>
   </div>

@@ -37,7 +37,7 @@
       <% if logged_in? %>
         <div class="dropdown show">
           <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Managment
+            Posts Managment
           </a>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
             <a
@@ -53,8 +53,25 @@
               <%= link_to ' AdminLogIn', adminlogin_url, method: :get, class: " dropdown-item fa fa-sign-in sigin-icon",
                 style: "font-size:20px;color:red"%>
             </a>
-            <!--<a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a> -->
+          </div>
+        </div>
+      &nbsp;&nbsp;&nbsp;
+        <div class="dropdown show">
+          <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Category Managment
+          </a>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <a
+              <%= link_to ' create category', new_category_url, method: :get, class: " dropdown-item fa fa-sign-in sigin-icon",
+                style: "font-size:20px;color:red"%>
+            </a>
+          </div>
+
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <a
+              <%= link_to ' AdminLogIn', adminlogin_url, method: :get, class: " dropdown-item fa fa-sign-in sigin-icon",
+                style: "font-size:20px;color:red"%>
+            </a>
           </div>
         </div>
       <% end %>
