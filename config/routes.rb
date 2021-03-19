@@ -10,6 +10,9 @@ Rails.application.routes.draw do
   get 'adminlogin' => 'admin/sessions#new'
   post 'adminlogin' => 'admin/sessions#create'
   delete 'logout' => 'admin/sessions#destroy'
+  match 'blobs/:signed_id/*filename', to: 'blobs#show', via: [:get, :post]
+  delete 'attachments/:signed_id/*filename', to: 'attachments#destroy'
+  resources :attachments, only: [:destroy], as: :destroy_attachment
 
   # get 'about' => 'home_pages#about'
   # get '/contact' => 'home_pages#contact'
