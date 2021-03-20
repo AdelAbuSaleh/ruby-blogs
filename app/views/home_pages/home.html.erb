@@ -1,16 +1,50 @@
 <!-- Start -->
+<!-- Admin Actions -->
+  <% if logged_in? %>
+    <!-- Admin Navbar content -->
+    <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+        <!-- New Post path -->
+      <%=
+        link_to ' create posts', new_post_url, method: :get,  type: "button",
+        class: "btn btn-outline-secondary btn-rounded", style: "font-size:20px;color:dark"
+      %>
+        <!-- New category path -->
+      <%=
+        link_to ' create category', new_category_url, method: :get,  type: "button",
+        class: "btn btn-outline-secondary btn-rounded", style: "font-size:20px;color:dark"
+      %>
+        <!-- Posts path -->
+      <%=
+        link_to 'Posts', posts_url, method: :get,  type: "button",
+        class: "btn btn-outline-secondary btn-rounded", style: "font-size:20px;color:dark"
+      %>
+        <!-- Users path -->
+      <%=
+        link_to ' Users', admin_users_url, method: :get,  type: "button",
+        class: "btn btn-outline-secondary btn-rounded", style: "font-size:20px;color:dark"
+      %>
+        <!-- LogOut path -->
+       <%=
+        link_to ' LogOut', logout_path, method: "delete", type: "button",
+        class: "btn btn-outline-danger btn-rounded fa fa-sign-out sigout-ico", style: "font-size:20px;color:dark"
+      %>
+    <!-- End Navbar content -->
+    </nav>
+  <% end %>
+<!-- End Admin Actions -->
+
 <!-- Title section -->
   <div class="text-center">
     <h1> Simple Blogs </h1>
-    <p> I hope you benefit from this blog!</p> 
+    <p> I hope you benefit from this blogs!</p>
   </div>
 <!-- End Title section -->
 <!-- --- -->
 <!-- Blogs section -->
-  <% Post.all.with_rich_text_body_and_embeds.limit(5).each do |post| %>
+  <% @posts.each do |post| %>
     <div class="card w-100">
       <div class="card-body">
-        <h5 class="card-title"><%= post.title %></h5>
+        <h5 class="card-title"><%= post.category.name_en %></h5>
         <p class="card-text"><%= post.title %></p>
         <td><%= link_to 'Read More', post, method: :get %></td>
       </div>

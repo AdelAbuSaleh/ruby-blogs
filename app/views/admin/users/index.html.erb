@@ -1,25 +1,34 @@
+<!-- Start -->
 <p id="notice"><%= notice %></p>
-
-<h1>Admin Users</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @admin_users.each do |admin_user| %>
-      <tr>
-        <td><%= link_to 'Show', admin_user %></td>
-        <td><%= link_to 'Edit', edit_admin_user_path(admin_user) %></td>
-        <td><%= link_to 'Destroy', admin_user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Admin User', new_admin_user_path %>
+<!-- Start Listing -->
+<div class="text-center">
+    <!-- Title -->
+  <p><strong> Listing Admins </strong></p>
+    <!-- End Title -->
+      <!-- New User path -->
+    <%= link_to 'New Admin User', new_admin_user_path %>
+    <!-- Start table -->
+    <table class="table table-striped table-hover">
+      <thead>
+        <tr>
+          <th>Full Name</th><th></th><th>Actions</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+    <!-- Start table body-->
+      <tbody>
+        <% @admin_users.each do |admin_user| %>
+          <tr>
+            <td><%= admin_user.full_name_en %></td>
+            <td><%= link_to 'Show', admin_user, method: :get %></td>
+            <% if logged_in? %>
+              <td><%= link_to 'Edit', edit_admin_user_path(admin_user), method: :get %></td>
+              <td><%= link_to 'Destroy', admin_user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <% end %>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <!-- End table -->
+  </div>
+<!-- End Listing -->

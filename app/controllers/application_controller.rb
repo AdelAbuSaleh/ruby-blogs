@@ -8,15 +8,6 @@ class ApplicationController < ActionController::Base
   include Admin::SessionsHelper
 
   def validate_token!
-    # flash[:error] = 'ير جى تسجيل الدخول !'
-    # return redirect_to root_url if session[:token].nil?
-    # @token = AuthenticateRequest.get(User, session[:token])
-    # flash[:error] = 'ير جى تسجيل الدخول !' unless @token
-    # redirect_to(root_url) && return if @token[:user].nil?
-    # set_curret_user
-  end
-
-  def set_curret_user
-    @current_user = @token[:user]
+    flash[:error] = 'ير جى تسجيل الدخول !' and redirect_to adminlogin_url if !logged_in? || session[:token].nil?
   end
 end
