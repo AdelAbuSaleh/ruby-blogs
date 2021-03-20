@@ -1,5 +1,8 @@
 <p id="notice"><%= notice %></p>
 
+<div>
+  <%= link_to 'Back', root_path, method: :get, class: "fa fa-angle-double-left"  %>
+
 <p>
   <strong></strong>
   <%= @post.title %>
@@ -15,5 +18,20 @@
   <strong>Body:</strong>
   <%= @post.body %>
 </p>
-
-<%= link_to 'Back', root_path, method: :get  %>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nav aria-label="...">
+  <ul class="pagination pagination-circle">
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    <li class="page-item">
+      <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+    </li>
+    <li class="page-item"><a class="page-link" href="#">1</a></li>
+    <li class="page-item active" aria-current="page">
+      <a class="page-link" href="#"> <span class="visually-hidden">(current)</span></a>
+    </li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item">
+      <a class="page-link" href="#">Next</a>
+    </li>
+  </ul>
+</nav>
+</div>
