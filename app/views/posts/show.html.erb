@@ -1,37 +1,42 @@
-<p id="notice"><%= notice %></p>
-
-<div>
+<!-- Start -->
+  <p id="notice"><%= notice %></p>
+  <!-- Back Link -->
   <%= link_to 'Back', root_path, method: :get, class: "fa fa-angle-double-left"  %>
-
-<p>
-  <strong></strong>
-  <%= @post.title %>
-</p>
-
-<% if @post.main_image.attached? %>
-  <div>
-    <%= image_tag @post.main_image.variant(resize: '400x400') %>
+  <!-- End Back Link -->
+  <!-- Start Content -->
+  <div class="text-center">
+    <!-- Title -->
+    <p><strong><%= @post.title %></strong></p>
+    <!-- End Title -->
+    <!-- Main Image -->
+    <% if @post.main_image.attached? %>
+      <div>
+        <%= image_tag @post.main_image.variant(resize: '400x400') %>
+      </div>
+    <% end %>
+    <!-- End Main Image -->
+    <!-- Start Body -->
+    <p>
+      <strong><%= @post.body %></strong>
+    </p>
+    <!-- End Body -->
+    <!-- Start pagination -->
+      <nav aria-label="...">
+        <ul class="pagination pagination-circle">
+          &nbsp;&nbsp;&nbsp;&nbsp;
+          <li class="page-item">
+            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+          </li>
+          <li class="page-item"><a class="page-link" href="#">1</a></li>
+          <li class="page-item active" aria-current="page">
+            <a class="page-link" href="#"> <span class="visually-hidden">(current)</span></a>
+          </li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item">
+            <a class="page-link" href="#">Next</a>
+          </li>
+        </ul>
+      </nav>
+    <!-- End pagination -->
   </div>
-<% end %>
-
-<p>
-  <strong>Body:</strong>
-  <%= @post.body %>
-</p>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nav aria-label="...">
-  <ul class="pagination pagination-circle">
-    &nbsp;&nbsp;&nbsp;&nbsp;
-    <li class="page-item">
-      <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
-    </li>
-    <li class="page-item"><a class="page-link" href="#">1</a></li>
-    <li class="page-item active" aria-current="page">
-      <a class="page-link" href="#"> <span class="visually-hidden">(current)</span></a>
-    </li>
-    <li class="page-item"><a class="page-link" href="#">3</a></li>
-    <li class="page-item">
-      <a class="page-link" href="#">Next</a>
-    </li>
-  </ul>
-</nav>
-</div>
+<!-- End Content -->

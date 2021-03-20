@@ -1,28 +1,36 @@
+<!-- Start -->
 <p id="notice"><%= notice %></p>
-
-<h1>Posts</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @posts.each do |post| %>
-      <tr>
-        <td><%= post.title %></td>
-        <td><%= post.body %></td>
-        <td><%= link_to 'Show', post, method: :get %></td>
-        <% if logged_in? %>
-          <td><%= link_to 'Edit', edit_post_path(post), method: :get %></td>
-          <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+<!-- Start Listing -->
+<div class="text-center">
+    <!-- Title -->
+  <p><strong> Listing Posts</strong></p>
+    <!-- End Title -->
+    <!-- Start table -->
+    <table class="table table-striped table-hover">
+      <thead>
+        <tr>
+          <% if logged_in? %>
+            <th>Title</th><th></th><th>Actions</th>
+          <% else %>
+            <th>Title</th> <th>Actions</th>
+          <% end %>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+    <!-- Start table body-->
+      <tbody>
+        <% @posts.each do |post| %>
+          <tr>
+            <td><%= post.title %></td>
+            <td><%= link_to 'View More', post, method: :get %></td>
+            <% if logged_in? %>
+              <td><%= link_to 'Edit', edit_post_path(post), method: :get %></td>
+              <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <% end %>
+          </tr>
         <% end %>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
+      </tbody>
+    </table>
+    <!-- End table -->
+</div>
+<!-- End Listing -->

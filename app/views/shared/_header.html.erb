@@ -5,75 +5,14 @@
 
     <div class="collapse navbar-collapse" id="navbar">
       <ul class="navbar-nav mr-auto">
-        <%= link_to 'Simple Blog', root_path, class: 'nav-link' %>
+        <%= link_to 'Simple Blog', root_path, method: :get, remote: true,class: 'nav-link' %>
       </ul>
     </div>
 
-    <%= link_to ' Blogs', root_url, method: :get, class: "nav-link", style: "font-size:20px;color:white"%>&nbsp;&nbsp;&nbsp;
-    <%# <%= link_to ' Blogs', posts_path, method: :get, class: "nav-link", style: "font-size:20px;color:white
+    <%= link_to ' Main', root_url, method: :get, class: "nav-link", style: "font-size:20px;color:white"%>&nbsp;&nbsp;&nbsp;
+    <%= link_to ' Blogs', posts_path, method: :get, class: "nav-link", style: "font-size:20px;color:white" %>
     <%= link_to ' About', about_path, method: :get, class: "nav-link", style: "font-size:20px;color:white"%>&nbsp;&nbsp;&nbsp;
     <%= link_to ' Contact', contact_url, method: :post, class: "nav-link", style: "font-size:20px;color:white"%>&nbsp;&nbsp;&nbsp;
-      <div class="dropdown show">
-        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Admin
-        </a>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-          <% unless logged_in? %>
-            <a
-              <%= link_to ' AdminLogIn', adminlogin_url, method: :get, class: " dropdown-item fa fa-sign-in sigin-icon",
-                style: "font-size:20px;color:red"%>
-            </a>
-          <% else %>
-            <a
-              <%= link_to ' LogOut', logout_path, method: "delete", class: " dropdown-itemfa fa-sign-out sigout-icon",
-                style: "font-size:20px;color:red"%>
-            </a>
-          <% end %>
-          <!--<a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a> -->
-        </div>
-      </div>
-      &nbsp;&nbsp;&nbsp;
-      <% if logged_in? %>
-        <div class="dropdown show">
-          <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Posts Managment
-          </a>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-            <a
-              <%= link_to ' create posts', new_post_url, method: :get, class: " dropdown-item fa fa-sign-in sigin-icon",
-                style: "font-size:20px;color:red"%>
-            </a>
-            <!--<a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a> -->
-          </div>
 
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-            <a
-              <%= link_to ' AdminLogIn', adminlogin_url, method: :get, class: " dropdown-item fa fa-sign-in sigin-icon",
-                style: "font-size:20px;color:red"%>
-            </a>
-          </div>
-        </div>
-      &nbsp;&nbsp;&nbsp;
-        <div class="dropdown show">
-          <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Category Managment
-          </a>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-            <a
-              <%= link_to ' create category', new_category_url, method: :get, class: " dropdown-item fa fa-sign-in sigin-icon",
-                style: "font-size:20px;color:red"%>
-            </a>
-          </div>
-
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-            <a
-              <%= link_to ' AdminLogIn', adminlogin_url, method: :get, class: " dropdown-item fa fa-sign-in sigin-icon",
-                style: "font-size:20px;color:red"%>
-            </a>
-          </div>
-        </div>
-      <% end %>
   </div>
 </nav>
