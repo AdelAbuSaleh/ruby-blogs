@@ -1,4 +1,14 @@
 <p id="notice"><%= notice %></p>
+<!-- Start -->
+  <div class="text-center">
+    <!-- Full Name -->
+    <p><strong><%= @admin_user.full_name_en %></strong></p>
+    <!-- Other Filds -->
+    <li><i class="fa fa-angle-double-right"></i> <strong>full_name_en:</strong><%= @admin_user.full_name_en %></li>
+    <li><i class="fa fa-angle-double"></i> <strong>full_name_ar:</strong><%=  @admin_user.full_name_ar %></li>
+    <li><i class="fa fa-angle-double"></i> <strong>Phone:</strong><%=  @admin_user.mobile1%></li>
+    <li><i class="fa fa-angle-double"></i> <strong>mobile2:</strong><%= @admin_user.mobile2%></li>
 
-<%= link_to 'Edit', edit_admin_user_path(@admin_user) %> |
-<%= link_to 'Back', admin_users_path %>
+  <%= link_to 'Edit', edit_admin_user_path(@admin_user), method: :get %> |
+  <%= link_to 'Back', admin_users_path, method: :get %>
+</div>
