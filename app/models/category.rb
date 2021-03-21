@@ -20,5 +20,5 @@ class Category < ApplicationRecord
   validates :name_ar, :name_en, presence: true
   ## --------------------- Callbacks ---------------------- ##
   ## ------------------- Class Methods -------------------- ##
-  ## ---------------------- Methods ----------------------- ## 
+  ## ---------------------- Methods ----------------------- ##
 end

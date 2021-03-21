@@ -10,13 +10,13 @@ Rails.application.routes.draw do
   get 'adminlogin' => 'admin/sessions#new'
   post 'adminlogin' => 'admin/sessions#create'
   delete 'logout' => 'admin/sessions#destroy'
-  match 'blobs/:signed_id/*filename', to: 'blobs#show', via: [:get, :post]
+  match 'blobs/:signed_id/*filename', to: 'blobs#show', via: %i[get post]
   delete 'attachments/:signed_id/*filename', to: 'attachments#destroy'
   resources :attachments, only: [:destroy], as: :destroy_attachment
 
   # get 'about' => 'home_pages#about'
   # get '/contact' => 'home_pages#contact'
-  get  '/about', to: 'home_pages#about'
+  get '/about', to: 'home_pages#about'
   resources :posts
   # resources :home_pages, only: [] do
   #   post :contact, on: :collection
