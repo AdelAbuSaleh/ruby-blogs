@@ -18,7 +18,7 @@ module Admin::SessionsHelper
   # decode authentication token
   def decoded_auth_token
     @decoded_auth_token ||= JsonWebToken.decode(session[:token])
-  rescue
+  rescue StandardError
     nil
   end
 

@@ -24,9 +24,9 @@ class AttachmentsController < ApplicationController
       @record.update_attribute(:content, content) if should_update?
     end
 
-    respond_with nil do |format|
+    respond_with(nil) do |format|
       format.html { destroy_redirect }
-      format.json { head :no_content }
+      format.json { head(:no_content) }
     end
   end
 
@@ -61,6 +61,6 @@ class AttachmentsController < ApplicationController
   end
 
   def destroy_redirect
-    redirect_to post_id.present? ? edit_post_url(post_id) : posts_path
+    redirect_to(post_id.present? ? edit_post_url(post_id) : posts_path)
   end
 end

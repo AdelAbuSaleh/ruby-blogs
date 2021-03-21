@@ -8,6 +8,6 @@ class ApplicationController < ActionController::Base
   include Admin::SessionsHelper
 
   def validate_token!
-    flash[:error] = 'ير جى تسجيل الدخول !' and redirect_to adminlogin_url if !logged_in? || session[:token].nil?
+    flash[:error] = 'ير جى تسجيل الدخول !' and redirect_to(adminlogin_url) if !logged_in? || session[:token].nil?
   end
 end

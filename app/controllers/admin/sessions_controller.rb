@@ -11,16 +11,16 @@ class Admin::SessionsController < ApplicationController
       if authorized_user?
         token = generate_token(user)
         save_token(token)
-        flash[:success] = "You are logined successfully., Welcome back"
-        format.html { redirect_to root_url, notice: 'You are logined successfully.' }
+        flash[:success] = 'You are logined successfully., Welcome back'
+        format.html { redirect_to(root_url, notice: 'You are logined successfully.') }
         # format.js { render inline: "location.reload();" }
-        format.js { render js: "window.location = '/'" }
-        format.json { render :show, status: :created, location: user }
+        format.js { render(js: "window.location = '/'") }
+        format.json { render(:show, status: :created, location: user) }
       else
-        flash[:success] = "Invalid Login Check your creduntionls or you are not authorized"
-        format.html { redirect_to adminlogin_url, alert: 'خطأ في التسجيل.' }
-        format.js { render inline: "location.reload();" }
-        format.json { render json: user.errors, status: :unprocessable_entity }
+        flash[:success] = 'Invalid Login Check your creduntionls or you are not authorized'
+        format.html { redirect_to(adminlogin_url, alert: 'خطأ في التسجيل.') }
+        format.js { render(inline: 'location.reload();') }
+        format.json { render(json: user.errors, status: :unprocessable_entity) }
       end
     end
   end
@@ -29,7 +29,7 @@ class Admin::SessionsController < ApplicationController
   # DELETE /admin/sessions/1.json
   def destroy
     log_out
-    redirect_to root_url, notice: 'Goodbye, I wish you a good time.'
+    redirect_to(root_url, notice: 'Goodbye, I wish you a good time.')
   end
 
   private
@@ -39,11 +39,11 @@ class Admin::SessionsController < ApplicationController
   end
 
   def user
-    @user ||= AdminUser.find_by("user_name =:login OR email =:login", login: params[:login])
+    @user ||= AdminUser.find_by('user_name =:login OR email =:login', login: params[:login])
   end
 
   # Session Meta Payload (token )
-  def generate_token(user)
+  def generate_token(_user)
     JsonWebToken.encode(login_payload, 3.days.from_now)
   end
 
