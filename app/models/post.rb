@@ -34,7 +34,7 @@ class Post < ApplicationRecord
   ## ---------------------- Methods ----------------------- ##
   def attach_other_images(signed_blob_id)
     blob = ActiveStorage::Blob.find_signed(signed_blob_id)
-    return other_images.attach(signed_blob_id) unless blob.present?
+    return other_images.attach(signed_blob_id) if blob.blank?
 
     other_images.attach(blob.signed_id) unless other_images.attachments.map(&:blob_id).include?(blob.id)
   end
